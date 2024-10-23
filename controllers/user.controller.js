@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model'); // Updated to use User model
 const bcrypt = require('bcrypt');
-
-const JWT_SECRET = 'your_secret_key'; // Use a strong secret key for production
+require('dotenv').config();
+const JWT_SECRET = process.env.SECRET_KEY; // Use a strong secret key for production
 
 class UserController {
   // Register new user
